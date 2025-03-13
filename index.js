@@ -4,7 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // importando rutas de usuario
-const userRoute = require('./routes/user.route');
+const articuloRoute = require('./routes/articulo.route');
+const personaRoute = require('./routes/persona.route');
+const ubicacionRoute = require('./routes/ubicacion.route');
+const asignacionRoute = require('./routes/asignacion.route');
+const inventarioRoute = require('./routes/inventario.route');
+
 
 const app = express();
 // Agregando el parser JSON de express
@@ -24,7 +29,11 @@ app.get('/', (req, res) => {
 // D - delete -> delete
 
 // Endpoints para colección de usuarios
-app.use('/api/users', userRoute);
+app.use('/api/articulo',articuloRoute);
+app.use('/api/persona',personaRoute);
+app.use('/api/ubicacion',ubicacionRoute);
+app.use('/api/asignacion',asignacionRoute);
+app.use('/api/inventario',inventarioRoute);
 
 // Realizar petición de conexión a mongodb
 mongoose.connect('mongodb+srv://2311080447:Zb0EqlCi0XlJKKGc@cluster0.8biby.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/myDataBase')
