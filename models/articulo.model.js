@@ -20,10 +20,6 @@ const ArticuloSchema = mongoose.Schema({
     Ubicacion: {
         type: String,
         required: true
-    },
-    Fecha: {
-        type: String,
-        required: true
     }
 })
 
